@@ -24,9 +24,9 @@ public class CustomSecurityConfig extends WebSecurityConfigurerAdapter{
         return super.authenticationManager();
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
-    }
+//    @Bean
+//    public PasswordEncoder passwordEncoder() {
+//        return NoOpPasswordEncoder.getInstance();
+//    }
 
 }
