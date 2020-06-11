@@ -16,38 +16,38 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="lancamento")
+@Table(name = "lancamento")
 public class Lancamento {
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)	
-	private Long id;
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long id;
+
 	@NotNull
 	private String descricao;
-	
+
 	@NotNull
-	@Column(name="data_vencimento")
+	@Column(name = "data_vencimento")
 	private LocalDate dataVencimento;
-	
-	@Column(name="data_pagamento")
+
+	@Column(name = "data_pagamento")
 	private LocalDate dataPagamento;
-	
+
 	private BigDecimal valor;
-	
+
 	@NotNull
 	private String observacao;
-	
+
 	@NotNull
-	//como string ele não gera codigo, ele trás escrito o que é
+	// como string ele não gera codigo, ele trás escrito o que é
 	@Enumerated(EnumType.STRING)
 	private TipoLancamento tipo;
-	
+
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "id_categoria")
 	private Categoria categoria;
-	
+
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "id_pessoa")
@@ -149,8 +149,5 @@ public class Lancamento {
 			return false;
 		return true;
 	}
-	
-	
-	
 
 }
