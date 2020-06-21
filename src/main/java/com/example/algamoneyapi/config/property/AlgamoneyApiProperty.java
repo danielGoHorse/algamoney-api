@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties("algamoney")
 public class AlgamoneyApiProperty {
 
-	private String originPermitida = "http://localhost:8000"; //  : Configurar para diferentes ambientes
+	private String originPermitida = "http://localhost:8080"; //  : Configurar para diferentes ambientes
 	
 	private final Seguranca seguranca = new Seguranca();
 	
